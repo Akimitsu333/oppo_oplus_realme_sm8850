@@ -495,7 +495,6 @@ jobs:
             echo "CONFIG_NETFILTER_XT_MATCH_ADDRTYPE=y" >> ./arch/arm64/configs/gki_defconfig
             echo "CONFIG_TMPFS_XATTR=y" >> ./arch/arm64/configs/gki_defconfig
             echo "CONFIG_TMPFS_POSIX_ACL=y" >> ./arch/arm64/configs/gki_defconfig
-            # echo "CONFIG_NAMESPACES=y" >> ./arch/arm64/configs/gki_defconfig
             # echo "CONFIG_NETFILTER_XT_TARGET_REJECT=y" >> ./arch/arm64/configs/gki_defconfig
             # echo "CONFIG_NETFILTER_XT_TARGET_LOG=y" >> ./arch/arm64/configs/gki_defconfig
             # echo "CONFIG_NETFILTER_XT_MATCH_RECENT=y" >> ./arch/arm64/configs/gki_defconfig
