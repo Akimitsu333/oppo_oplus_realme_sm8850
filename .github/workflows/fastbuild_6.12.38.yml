@@ -130,9 +130,11 @@ jobs:
           rm -f ./ccache &
 
           echo "正在克隆源码仓库..."
-          aria2c -s16 -x16 -k1M https://github.com/cctv18/android_kernel_common_oneplus_sm8845/archive/refs/heads/oneplus/sm8845_b_16.0.0_ace_6t.zip -o common.zip &&
+          # aria2c -s16 -x16 -k1M https://github.com/cctv18/android_kernel_common_oneplus_sm8845/archive/refs/heads/oneplus/sm8845_b_16.0.0_ace_6t.zip -o common.zip &&
+          aria2c -s16 -x16 -k1M https://github.com/Akimitsu333/realme_neo8-AndroidB-common-source/archive/refs/heads/master.zip -o common.zip &&
           unzip -q common.zip &&
-          mv "android_kernel_common_oneplus_sm8845-oneplus-sm8845_b_16.0.0_ace_6t" common &&
+          # mv "android_kernel_common_oneplus_sm8845-oneplus-sm8845_b_16.0.0_ace_6t" common &&
+          mv "realme_neo8-AndroidB-common-source-master" common &&
           rm -rf common.zip &
 
           echo "正在克隆llvm-clang19工具链..." &&
@@ -518,7 +520,7 @@ jobs:
       - name: 启用ADIOS IO调度器
         if: inputs.adios_enable
         run: |
-          echo "正在启用ADIOS IO调度器(将截止时间优先调度算法与基于自主学习的自适应延迟控制算法相结合, 降低I/O延迟)…"
+          echo "正在启用ADIOS IO调度器(将截止时间优先调度算法与基于https://github.com/Akimitsu333/realme_neo8-AndroidB-common-source自主学习的自适应延迟控制算法相结合, 降低I/O延迟)…"
           cd kernel_workspace
           echo "CONFIG_MQ_IOSCHED_ADIOS=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_MQ_IOSCHED_DEFAULT_ADIOS=y" >> ./common/arch/arm64/configs/gki_defconfig
